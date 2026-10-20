@@ -1,0 +1,16 @@
+:root { --bg: #1f1a33; --raised: #2a2443; --text: #f1eafc; --muted: #c9c0e0; --gold: #d9b36c; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 "Iowan Old Style", Georgia, serif; }
+main { max-width: 680px; margin: 0 auto; padding: 48px 20px 80px; }
+header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+header img { width: 56px; height: 56px; border-radius: 13px; }
+header a { color: var(--text); text-decoration: none; font-size: 22px; font-weight: 600; }
+h1 { font-size: 34px; line-height: 1.2; margin: 0 0 6px; }
+h2 { font-size: 21px; color: var(--gold); margin: 36px 0 8px; }
+p, li { color: var(--muted); }
+strong { color: var(--text); }
+a { color: var(--gold); }
+.card { background: var(--raised); border-radius: 18px; padding: 18px 22px; margin: 18px 0; }
+.small { font-size: 14px; }
+nav { margin-top: 48px; font-size: 15px; }
+nav a { margin-right: 18px; }
