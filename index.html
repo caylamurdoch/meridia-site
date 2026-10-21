@@ -51,7 +51,17 @@
   .themes figcaption { color: var(--muted); font-size: 15px; margin-top: 10px; }
   .explainer { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; margin: 24px 0 56px; }
   @media (min-width: 760px) { .explainer { grid-template-columns: 1.1fr 1fr; } }
-  .explainer svg { width: 100%; max-width: 420px; margin: 0 auto; display: block; }
+  .explainer svg { width: 100%; max-width: 380px; margin: 0 auto; display: block; }
+  .lede-small { font-size: 19px; }
+  .learn-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 8px 0 12px; }
+  .learn-cards .card { margin: 0; }
+  .learn-cards h3 { margin: 0 0 8px; font-size: 19px; color: var(--text); }
+  .learn-cards p { margin: 0; }
+  .planets { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; color: var(--muted); font-size: 16px; }
+  .planets b { color: var(--text); font-weight: 600; margin-right: 6px; }
+  .planets span { display: inline-block; width: 1.3em; text-align: center; }
+  .more { margin: 0 0 56px; font-size: 18px; }
+  .more a { text-decoration: none; font-weight: 600; }
   .faq details { background: var(--raised); border-radius: 18px; padding: 16px 22px; margin: 12px 0; }
   .faq summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 18px; list-style: none; }
   .faq summary::-webkit-details-marker { display: none; }
@@ -79,25 +89,61 @@
 <h2>What is astrocartography?</h2>
 <section class="explainer">
   <div>
-    <p>At the moment you were born, every planet sat somewhere in the sky. Somewhere on Earth, each one was just <strong>rising</strong> over the horizon, somewhere it was <strong>setting</strong>, somewhere it was right <strong>overhead</strong>, and somewhere it was directly <strong>underfoot</strong>.</p>
-    <p>Astrocartography draws those places as lines across the globe. Astrologers say a planet's energy feels strongest near its lines: near your Venus line, love and beauty come easily; near Jupiter, luck and growth. It's a gentle way to ask why some places feel like home the moment you arrive.</p>
+    <p class="lede-small">At the moment you were born, every planet sat somewhere in the sky. <strong>Astrocartography maps where on Earth each one was rising, setting, overhead or underfoot</strong>, and draws those places as lines across the globe.</p>
+    <p>Astrologers say a planet's energy feels strongest near its lines. It's a gentle way to ask why some places feel like home the moment you arrive.</p>
   </div>
-  <svg viewBox="0 0 420 384" role="img" aria-labelledby="dtitle">
-    <title id="dtitle">Diagram: the Earth with the Sun rising on one side, setting on the other, overhead at the top, and underfoot at the bottom</title>
-    <circle cx="210" cy="190" r="86" fill="#2a2443" stroke="#d9b36c" stroke-opacity="0.5"/>
-    <path d="M124 190 A86 86 0 0 1 296 190" fill="none" stroke="#d9b36c" stroke-opacity="0.25" stroke-dasharray="3 6"/>
-    <g fill="#ffd173"><circle cx="210" cy="337" r="10"/><circle cx="210" cy="43" r="10"/><circle cx="54" cy="190" r="10"/><circle cx="366" cy="190" r="10"/></g>
+  <svg viewBox="0 0 420 406" role="img" aria-labelledby="dtitle">
+    <title id="dtitle">Diagram of the four angles: the Midheaven (MC) overhead at the top, the Ascendant (AC) rising on the left, the Descendant (DC) setting on the right, and the Imum Coeli (IC) underfoot at the bottom</title>
+    <circle cx="210" cy="200" r="86" fill="#2a2443" stroke="#d9b36c" stroke-opacity="0.5"/>
+    <g fill="#ffd173"><circle cx="210" cy="53" r="10"/><circle cx="210" cy="347" r="10"/><circle cx="54" cy="200" r="10"/><circle cx="366" cy="200" r="10"/></g>
     <g stroke="#ffd173" stroke-width="2" stroke-dasharray="4 6" opacity="0.6">
-      <line x1="210" y1="56" x2="210" y2="100"/><line x1="210" y1="280" x2="210" y2="324"/><line x1="68" y1="190" x2="120" y2="190"/><line x1="300" y1="190" x2="352" y2="190"/>
+      <line x1="210" y1="66" x2="210" y2="110"/><line x1="210" y1="290" x2="210" y2="334"/>
+      <line x1="68" y1="200" x2="120" y2="200"/><line x1="300" y1="200" x2="352" y2="200"/>
     </g>
-    <g fill="#f1eafc" font-family="Iowan Old Style, Georgia, serif" font-size="17" text-anchor="middle">
-      <text x="210" y="18">overhead</text><text x="54" y="222">rising</text><text x="366" y="222">setting</text>
-      <text x="210" y="376">underfoot</text>
+    <circle cx="210" cy="114" r="5" fill="#ff9ec2"/><circle cx="210" cy="286" r="5" fill="#b8a0ff"/>
+    <circle cx="124" cy="200" r="5" fill="#7fe8c4"/><circle cx="296" cy="200" r="5" fill="#80bfff"/>
+    <g font-family="Iowan Old Style, Georgia, serif" text-anchor="middle">
+      <g fill="#f1eafc" font-size="17">
+        <text x="210" y="16">overhead</text><text x="210" y="380">underfoot</text>
+        <text x="54" y="232">rising</text><text x="366" y="232">setting</text>
+      </g>
+      <g fill="#d9b36c" font-size="14" font-weight="700" letter-spacing="1.5">
+        <text x="210" y="34">MC</text><text x="210" y="398">IC</text>
+        <text x="54" y="250">AC</text><text x="366" y="250">DC</text>
+      </g>
     </g>
-    <circle cx="210" cy="276" r="5" fill="#b8a0ff"/>
-    <circle cx="210" cy="104" r="5" fill="#ff9ec2"/><circle cx="124" cy="190" r="5" fill="#7fe8c4"/><circle cx="296" cy="190" r="5" fill="#80bfff"/>
   </svg>
 </section>
+
+<div class="learn-cards">
+  <div class="card">
+    <h3>Four lines per planet</h3>
+    <p><strong>MC</strong>, overhead: how you're seen, your work and reputation.<br>
+       <strong>IC</strong>, underfoot: home, roots and belonging.<br>
+       <strong>AC</strong>, rising: your energy and how you show up.<br>
+       <strong>DC</strong>, setting: love, partners and the people you meet.</p>
+  </div>
+  <div class="card">
+    <h3>Ten planets, ten flavors</h3>
+    <ul class="planets">
+      <li><span style="color:#ffd173">☉&#xFE0E;</span><b>Sun</b>confidence</li>
+      <li><span style="color:#e3e6fa">☽&#xFE0E;</span><b>Moon</b>comfort</li>
+      <li><span style="color:#80ebc7">☿&#xFE0E;</span><b>Mercury</b>ideas</li>
+      <li><span style="color:#ff9ec2">♀&#xFE0E;</span><b>Venus</b>love</li>
+      <li><span style="color:#ff6b57">♂&#xFE0E;</span><b>Mars</b>drive</li>
+      <li><span style="color:#b8a0ff">♃&#xFE0E;</span><b>Jupiter</b>luck</li>
+      <li><span style="color:#dc9e61">♄&#xFE0E;</span><b>Saturn</b>mastery</li>
+      <li><span style="color:#59dbff">♅&#xFE0E;</span><b>Uranus</b>freedom</li>
+      <li><span style="color:#6b8cff">♆&#xFE0E;</span><b>Neptune</b>dreams</li>
+      <li><span style="color:#e05cb3">♇&#xFE0E;</span><b>Pluto</b>depth</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Strongest up close</h3>
+    <p>A line is felt most within about 250 km (150 miles) of it, and fades with distance. So a city right on your Venus line is a different story from one a thousand kilometers away.</p>
+  </div>
+</div>
+<p class="more"><a href="/learn">Read the full guide →</a></p>
 
 <h2>How it works</h2>
 <div class="steps">
@@ -151,7 +197,7 @@
 </section>
 
 <footer>
-  <a href="/support">Support</a><a href="/privacy">Privacy</a><a href="mailto:meridia.support@gmail.com">Contact</a>
+  <a href="/learn">Learn</a><a href="/support">Support</a><a href="/privacy">Privacy</a><a href="mailto:meridia.support@gmail.com">Contact</a>
   <p class="small">Meridia is for reflection and inspiration.</p>
   <p class="small">© 2026 Altar Labs LLC</p>
 </footer>
