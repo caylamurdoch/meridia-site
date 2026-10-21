@@ -7,7 +7,16 @@
 <meta name="description" content="Meridia maps your birth chart across the world, so you can see where love, work and adventure come most naturally to you.">
 <meta property="og:title" content="Meridia: Astro Map">
 <meta property="og:description" content="Find where on Earth you shine.">
-<meta property="og:image" content="https://getmeridia.app/shots/globe.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getmeridia.app/">
+<meta property="og:image" content="https://getmeridia.app/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A grainy gold globe crossed by colorful planet lines, next to the words Find where on Earth you shine.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meridia: Astro Map">
+<meta name="twitter:description" content="Find where on Earth you shine.">
+<meta name="twitter:image" content="https://getmeridia.app/share.png">
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
@@ -40,6 +49,15 @@
   .themes .phone { width: 170px; border-radius: 30px; padding: 6px; }
   .themes .phone img { border-radius: 25px; }
   .themes figcaption { color: var(--muted); font-size: 15px; margin-top: 10px; }
+  .explainer { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; margin: 24px 0 56px; }
+  @media (min-width: 760px) { .explainer { grid-template-columns: 1.1fr 1fr; } }
+  .explainer svg { width: 100%; max-width: 420px; margin: 0 auto; display: block; }
+  .faq details { background: var(--raised); border-radius: 18px; padding: 16px 22px; margin: 12px 0; }
+  .faq summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 18px; list-style: none; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; float: right; color: var(--gold); font-size: 22px; line-height: 1; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p { margin: 10px 0 0; }
   footer { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 64px; padding-top: 24px; font-size: 15px; color: var(--muted); }
   footer a { margin-right: 18px; }
 </style>
@@ -56,6 +74,28 @@
     <span class="button">Beta opening soon</span>
     <p class="note">For iPhone. Free while in beta.</p>
   </div>
+</section>
+
+<h2>What is astrocartography?</h2>
+<section class="explainer">
+  <div>
+    <p>At the moment you were born, every planet sat somewhere in the sky. Somewhere on Earth, each one was just <strong>rising</strong> over the horizon, somewhere it was <strong>setting</strong>, somewhere it was right <strong>overhead</strong>, and somewhere it was directly <strong>underfoot</strong>.</p>
+    <p>Astrocartography draws those places as lines across the globe. Astrologers say a planet's energy feels strongest near its lines: near your Venus line, love and beauty come easily; near Jupiter, luck and growth. It's a gentle way to ask why some places feel like home the moment you arrive.</p>
+  </div>
+  <svg viewBox="0 0 420 300" role="img" aria-labelledby="dtitle">
+    <title id="dtitle">Diagram: the Earth with the Sun rising on one side, setting on the other, and overhead at the top</title>
+    <circle cx="210" cy="190" r="86" fill="#2a2443" stroke="#d9b36c" stroke-opacity="0.5"/>
+    <path d="M124 190 A86 86 0 0 1 296 190" fill="none" stroke="#d9b36c" stroke-opacity="0.25" stroke-dasharray="3 6"/>
+    <g fill="#ffd173"><circle cx="210" cy="40" r="13"/><circle cx="54" cy="190" r="10"/><circle cx="366" cy="190" r="10"/></g>
+    <g stroke="#ffd173" stroke-width="2" stroke-dasharray="4 6" opacity="0.6">
+      <line x1="210" y1="56" x2="210" y2="100"/><line x1="68" y1="190" x2="120" y2="190"/><line x1="300" y1="190" x2="352" y2="190"/>
+    </g>
+    <g fill="#f1eafc" font-family="Iowan Old Style, Georgia, serif" font-size="17" text-anchor="middle">
+      <text x="210" y="18">overhead</text><text x="54" y="222">rising</text><text x="366" y="222">setting</text>
+      <text x="210" y="296" fill="#c9c0e0">underfoot, on the far side</text>
+    </g>
+    <circle cx="210" cy="104" r="5" fill="#ff9ec2"/><circle cx="124" cy="190" r="5" fill="#7fe8c4"/><circle cx="296" cy="190" r="5" fill="#80bfff"/>
+  </svg>
 </section>
 
 <h2>How it works</h2>
@@ -99,6 +139,15 @@
   <figure><div class="phone"><img src="shots/theme-flashSheet.jpg" alt="Flash Sheet theme" loading="lazy"></div><figcaption>Flash Sheet</figcaption></figure>
   <figure><div class="phone"><img src="shots/theme-bloodmoonBubblegum.jpg" alt="Bubblegum theme" loading="lazy"></div><figcaption>Bubblegum</figcaption></figure>
 </div>
+
+<h2>Questions</h2>
+<section class="faq">
+  <details><summary>Is Meridia free?</summary><p>Yes, Meridia is free while it's in beta.</p></details>
+  <details><summary>Is my information private?</summary><p>Your birth details and your people stay on your iPhone. There are no accounts, no ads and no tracking. <a href="privacy.html">Read the privacy policy</a>.</p></details>
+  <details><summary>Do I need my exact birth time?</summary><p>It helps a lot, since four minutes moves a line about 100 km. If you only know roughly when you were born, Meridia shows soft bands covering everywhere your lines could be. Comparing with friends needs exact times for both of you.</p></details>
+  <details><summary>Is it on Android?</summary><p>Not yet. Meridia is made for iPhone.</p></details>
+  <details><summary>Where can I get help?</summary><p>Visit <a href="support.html">Support</a> or email <a href="mailto:meridia.support@gmail.com">meridia.support@gmail.com</a>.</p></details>
+</section>
 
 <footer>
   <a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="mailto:meridia.support@gmail.com">Contact</a>

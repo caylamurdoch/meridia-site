@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost in space | Meridia</title>
+<link rel="icon" href="/icon.png">
+<link rel="stylesheet" href="/style.css">
+<style>
+  main { text-align: center; padding-top: 72px; }
+  svg { width: 220px; height: 220px; display: block; margin: 0 auto 16px; }
+  @media (prefers-reduced-motion: no-preference) { .drift { animation: drift 6s ease-in-out infinite; transform-origin: center; } }
+  @keyframes drift { 50% { transform: translateY(-10px) rotate(-6deg); } }
+  .button { display: inline-block; background: var(--gold); color: var(--bg); text-decoration: none; font-weight: 600; padding: 14px 26px; border-radius: 999px; font-size: 18px; margin-top: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <svg viewBox="0 0 220 220" aria-hidden="true">
+    <g fill="#d9b36c"><circle cx="30" cy="40" r="2"/><circle cx="190" cy="30" r="1.5"/><circle cx="180" cy="180" r="2"/><circle cx="40" cy="170" r="1.5"/></g>
+    <g class="drift">
+      <circle cx="110" cy="110" r="62" fill="#e8b04a"/>
+      <path d="M78 58 Q96 110 78 162" fill="none" stroke="#1f1a33" stroke-width="9" stroke-linecap="round"/>
+      <path d="M78 58 Q96 110 78 162" fill="none" stroke="#ff9ec2" stroke-width="4" stroke-linecap="round"/>
+      <path d="M134 52 Q150 110 134 168" fill="none" stroke="#1f1a33" stroke-width="9" stroke-linecap="round"/>
+      <path d="M134 52 Q150 110 134 168" fill="none" stroke="#80bfff" stroke-width="4" stroke-linecap="round"/>
+      <text x="110" y="122" text-anchor="middle" font-family="Iowan Old Style, Georgia, serif" font-size="34" font-weight="700" fill="#1f1a33">?</text>
+    </g>
+  </svg>
+  <h1>Lost in space</h1>
+  <p>This page drifted off the map. Let's get you back to familiar ground.</p>
+  <a class="button" href="/">Back to Meridia</a>
+</main>
+</body>
+</html>
