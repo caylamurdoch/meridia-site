@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["NGCS7H4965.com.cayla.meridia"],
+        "components": [
+          { "/": "/add", "comment": "A friend's shared birth details (carried in the link's #fragment)" },
+          { "/": "/add/*" }
+        ]
+      }
+    ]
+  }
+}

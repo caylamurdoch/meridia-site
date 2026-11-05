@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare maps on Meridia</title>
+<meta name="robots" content="noindex">
+<meta name="apple-itunes-app" content="app-id=6824362339">
+<link rel="icon" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<meta property="og:site_name" content="Meridia">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Compare maps with me on Meridia">
+<meta property="og:description" content="See where our planet lines meet on a 3D globe.">
+<meta property="og:image" content="https://getmeridia.app/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://getmeridia.app/share.png">
+<link rel="stylesheet" href="/style.css">
+<style>
+  main { text-align: center; max-width: 560px; }
+  .orb { width: 120px; height: 120px; border-radius: 30px; margin: 24px auto 8px; display: block; box-shadow: 0 20px 60px rgba(217,179,108,0.25); }
+  h1 { font-size: clamp(30px, 7vw, 42px); margin: 16px 0 8px; }
+  .lede { font-size: 19px; margin: 0 auto 28px; }
+  .badge img { height: 60px; width: auto; display: inline-block; }
+  ol { text-align: left; display: inline-block; margin: 28px auto 0; padding-left: 22px; font-size: 17px; }
+  ol li { margin: 8px 0; }
+  .small { margin-top: 32px; }
+</style>
+</head>
+<body>
+<main>
+<header><a href="/"><img src="/icon.png" alt=""></a><a href="/">Meridia</a></header>
+<img class="orb" src="/icon.png" alt="">
+<h1 id="title">Compare maps on Meridia</h1>
+<p class="lede" id="lede">Someone wants to see where your planet lines meet.</p>
+<a class="badge" href="https://apps.apple.com/us/app/meridia-astro-map/id6824362339"><img src="/app-store-badge.svg" alt="Download on the App Store" width="180" height="60"></a>
+<ol>
+  <li>Get Meridia free from the App Store.</li>
+  <li>Open it and add your own birth details.</li>
+  <li>Come back to the message and tap this link again. Meridia will offer to add <span id="who">them</span> to your people.</li>
+</ol>
+<p class="small">Their birth details are inside this link only. They're never sent to this website or stored anywhere. <a href="/privacy">Privacy</a></p>
+</main>
+<script>
+// Read just the name from the link, here in the browser, to say who sent it.
+(function () {
+  try {
+    var code = location.hash.slice(1).replace(/-/g, '+').replace(/_/g, '/');
+    if (!code) return;
+    while (code.length % 4) code += '=';
+    var bytes = Uint8Array.from(atob(code), function (c) { return c.charCodeAt(0); });
+    var data = JSON.parse(new TextDecoder().decode(bytes));
+    var name = String(data.name || '').trim().slice(0, 60);
+    if (!name) return;
+    var first = name.split(/\s+/)[0];
+    document.getElementById('title').textContent = first + ' wants to compare maps with you';
+    document.getElementById('lede').textContent = 'See where your planet lines meet on a living 3D globe.';
+    document.getElementById('who').textContent = first;
+    document.title = first + ' wants to compare maps on Meridia';
+  } catch (e) { /* An unreadable link keeps the general wording. */ }
+})();
+</script>
+</body>
+</html>
